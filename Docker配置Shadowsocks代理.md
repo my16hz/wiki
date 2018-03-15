@@ -1,6 +1,8 @@
 ## Shadowsocks 客户端
 ### 安装
 ```
+yum -y install epel-release
+yum -y install python-pip
 pip install --upgrade pip
 pip install shadowsocks
 ```
@@ -32,6 +34,12 @@ ExecStart=/usr/bin/sslocal -c /etc/shadowsocks.json
 
 [Install]
 WantedBy=multi-user.target
+```
+启动Shadowsocks客户端
+```
+systemctl enable shadowsocks.service
+systemctl start shadowsocks.service
+systemctl status shadowsocks.service
 ```
 
 ### 验证
